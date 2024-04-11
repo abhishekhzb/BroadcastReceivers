@@ -10,14 +10,14 @@ It's a way for different parts of your phone to know what's happening and react 
 For example, when your device connects to the internet, a broadcast is sent out so that apps can know and do things like update data or show notifications.
 
 **Static Broadcast Receivers:** These types of Receivers are declared in the manifest file and works even if the app is closed.
+
 **Dynamic Broadcast Receivers:** These types of receivers work only if the app is active or minimized.
 
 **NOTE :** Since from **API Level 26**, most of the broadcast can only be caught by the **dynamic receiver**.
 
 **Menifest.XML :**
-**ConnectivityReceiver :**
 
-       <receiver
+        <receiver
             android:name=".ConnectivityReceiver"
             android:exported="true">
             <intent-filter>
@@ -27,7 +27,7 @@ For example, when your device connects to the internet, a broadcast is sent out 
         
 **ConnectivityReceiver :**
 
-   class ConnectivityReceiver : BroadcastReceiver() {       
+  class ConnectivityReceiver : BroadcastReceiver() {       
     /**
      * This method is called when the BroadcastReceiver is receiving an Intent broadcast.
      *
@@ -47,12 +47,12 @@ For example, when your device connects to the internet, a broadcast is sent out 
             // Internet is disconnected
             Toast.makeText(context, "Internet disconnected", Toast.LENGTH_SHORT).show()
         }
+      }
     }
-}
 
 **MainActivity :**
 
-class MainActivity : AppCompatActivity() {
+   class MainActivity : AppCompatActivity() {
     private val connectivityReceiver = ConnectivityReceiver()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,8 +69,6 @@ class MainActivity : AppCompatActivity() {
         //Unregister the broadcast receiver
         unregisterReceiver(connectivityReceiver)
     }
-
-
-}
+   }
       
 

@@ -9,9 +9,9 @@ It's a way for different parts of your phone to know what's happening and react 
 
 For example, when your device connects to the internet, a broadcast is sent out so that apps can know and do things like update data or show notifications.
 
-**Static Broadcast Receivers:** These types of Receivers are declared in the manifest file and works even if the app is closed.
+**# Static Broadcast Receivers:** These types of Receivers are declared in the manifest file and works even if the app is closed.
 
-**Dynamic Broadcast Receivers:** These types of receivers work only if the app is active or minimized.
+**# Dynamic Broadcast Receivers:** These types of receivers work only if the app is active or minimized.
 
 **NOTE :** Since from **API Level 26**, most of the broadcast can only be caught by the **dynamic receiver**.
 
@@ -27,7 +27,7 @@ For example, when your device connects to the internet, a broadcast is sent out 
         
 **ConnectivityReceiver :**
 
-  class ConnectivityReceiver : BroadcastReceiver() {       
+    class ConnectivityReceiver : BroadcastReceiver() {       
     /**
      * This method is called when the BroadcastReceiver is receiving an Intent broadcast.
      *
@@ -52,10 +52,10 @@ For example, when your device connects to the internet, a broadcast is sent out 
 
 **MainActivity :**
 
-   class MainActivity : AppCompatActivity() {
-    private val connectivityReceiver = ConnectivityReceiver()
+     class MainActivity : AppCompatActivity() {
+       private val connectivityReceiver = ConnectivityReceiver()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

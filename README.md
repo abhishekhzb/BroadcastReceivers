@@ -25,7 +25,7 @@ For example, when your device connects to the internet, a broadcast is sent out 
             </intent-filter>
         </receiver>
         
-**ConnectivityReceiver :**
+**ConnectivityReceiver :** The ConnectivityReceiver is a custom class that extends the BroadcastReceiver class in Android. It is used to listen for changes in network connectivity, specifically when the device's connection status changes, such as connecting to Wi-Fi or switching to mobile data.
 
     class ConnectivityReceiver : BroadcastReceiver() {       
     /**
@@ -50,7 +50,7 @@ For example, when your device connects to the internet, a broadcast is sent out 
       }
     }
 
-**MainActivity :**
+**MainActivity :** MainActivity class in Android is responsible for managing the user interface and lifecycle of the main activity of your application.
 
      class MainActivity : AppCompatActivity() {
        private val connectivityReceiver = ConnectivityReceiver()
@@ -68,7 +68,7 @@ For example, when your device connects to the internet, a broadcast is sent out 
         super.onDestroy()
         //Unregister the broadcast receiver
         unregisterReceiver(connectivityReceiver)
-    }
-   }
+        }
+      }
       
 
